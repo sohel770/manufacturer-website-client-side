@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -11,10 +12,12 @@ import Navbar from './Shared/Navbar';
 
 
 
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
+      <div>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -29,6 +32,8 @@ function App() {
 
       <Footer></Footer>
     </div>
+    </QueryClientProvider>
+   
   );
 }
 

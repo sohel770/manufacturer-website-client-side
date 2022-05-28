@@ -4,14 +4,13 @@ const Portfolio = () => {
     return (
         <section className='container mx-auto'>
             <div className='mt-5'>
-                <h2 className='text-xl uppercase'>Md. Kamrul Hasan</h2>
-                <h2><strong>Email:</strong> kamrul.hasan.swe@gmail.com</h2>
+                <h2 className='text-xl uppercase'>Md Sohel Ahamed</h2>
+                <h2><strong>Email:</strong> sohel800ahamed@gmail.com</h2>
             </div>
             <div className='mt-5'>
                 <h2 className='text-xl uppercase'><strong>Education:</strong></h2>
-                <li>IUBAT- International University of Business Agriculture and Technology  </li>
-                <li>January 2018 – May 2022 </li>
-                <li>Department of Computer Science and Engineering </li>
+                <li>sheikh fazilatunnesa degree college</li>
+                
             </div>
             <div className='mt-5'>
                 <h2 className='text-xl uppercase'><strong>Skills:</strong></h2>
