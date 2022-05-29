@@ -24,9 +24,6 @@ const Navbar = () => {
             user && <li><Link to="/dashboard">Dashboard</Link></li>
         }
         {
-            user && <li><Link to="/myOrders">My Orders</Link></li>
-        }
-        {
             user && <li className='mx-5 items-center text-primary'>{user?.displayName}</li>
         }
         <li>{user ? <button onClick={logout} className="btn btn-active btn-ghost">Sign Out</button> : <Link to="/login">Login</Link>}</li>

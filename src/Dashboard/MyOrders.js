@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -7,31 +8,19 @@ import Loading from '../Shared/Loading';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
-
     useEffect(() => {
-        if (user) {
-            fetch(`http://localhost:5000/order?email=${user?.email}`, {
-                method: 'GET',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-                .then(res => {
-                    console.log('res', res);
-                    if (res.status === 401 || res.status === 403) {
-                        signOut(auth);
-                        localStorage.removeItem('accessToken');
-                        navigate('/');
-                    }
-                    return res.json()
-                })
-                .then(data => {
-                    setOrders(data)
-                });
-        }
-    }, [user, navigate])
+        const getOrders = async () => {
+          const email = user.email;
+        
+          const url = `http://localhost:5000/order?email=${email}`;
+          const { data } = await axios.get(url);
+          setOrders(data);
+        };
+        getOrders();
+      },      [user, navigate]);
+    
 
 
     if (!orders.length > 0) {

@@ -1,3 +1,4 @@
+
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -9,6 +10,8 @@ const ManageAllOrders = () => {
     const [manageOrders, setManageOrders] = useState([]);
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
+
+
 
     useEffect(() => {
         if (user) {
@@ -33,6 +36,7 @@ const ManageAllOrders = () => {
         }
     }, [user, navigate])
 
+    console.log(manageOrders)
     if (!manageOrders.length > 0) {
         return <Loading></Loading>
     }

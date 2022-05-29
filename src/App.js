@@ -21,6 +21,7 @@ import MyOrders from './Dashboard/MyOrders';
 import ManageProducts from './Dashboard/ManageProducts';
 import ManageAllOrders from './Dashboard/ManageAllOrders';
 import About from './Dashboard/About';
+import DeleteConfirmModal from './Dashboard/DeleteConfirmModal';
 
 
 
@@ -35,7 +36,7 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/blogs' element={<Blogs></Blogs>}></Route>
           <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
-          <Route path='/product/:productId' element={
+          <Route path='product/:productId' element={
             <RequireAuth><ProductPurchase></ProductPurchase></RequireAuth>
           }></Route>
 
@@ -58,30 +59,40 @@ function App() {
 
             <Route path='users' element={<RequireAuth>
               <Users></Users>
-          </RequireAuth>}></Route>
+            </RequireAuth>}></Route>
 
-          <Route path='myOrders' element={<RequireAuth>
-           <MyOrders></MyOrders>
-          </RequireAuth>}></Route>
+            <Route path='myOrders' element={<RequireAuth>
+              <MyOrders></MyOrders>
+            </RequireAuth>}></Route>
 
-          <Route path='sohel' element={<About></About> }></Route>
+            <Route path='manageProducts' element={<RequireAuth>
+              <ManageProducts></ManageProducts>
+            </RequireAuth>}></Route>
+
+            <Route path='manageOrders' element={<RequireAuth>
+              <ManageAllOrders></ManageAllOrders>
+            </RequireAuth>}></Route>
+
+
+
+            <Route path='sohel' element={<About></About>}></Route>
           </Route>
           {/* End nestedRoute */}
 
-          
-
-      
 
 
 
-         
+
+
+
+
           <Route path='manageOrders' element={<RequireAuth>
-            <ManageAllOrders></ManageAllOrders>
+            <DeleteConfirmModal></DeleteConfirmModal>
           </RequireAuth>}></Route>
 
-          <Route path='manageProducts' element={<RequireAuth>
+          {/* <Route path='manageProducts' element={<RequireAuth>
             <ManageProducts></ManageProducts>
-          </RequireAuth>}></Route>
+          </RequireAuth>}></Route> */}
 
           <Route path='myProfile' element={<RequireAuth>
             <MyProfile></MyProfile>

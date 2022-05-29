@@ -4,14 +4,14 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import usePurchaseDetails from '../Hooks/usePurchaseDetails';
 import auth from '../firebase.init';
-// import usePurchaseDetails from '../../hooks/usePurchaseDetails';
+
 
 
 const ProductPurchase = () => {
     const { productId } = useParams();
     const [product] = usePurchaseDetails(productId);
     const [user] = useAuthState(auth);
-
+console.log(productId)
     const handleOrderSubmit = (event) => {
         event.preventDefault();
         const name = user.displayName;
@@ -26,7 +26,7 @@ const ProductPurchase = () => {
 
         const order = { name, customer, productName, minQuantity, price, availableQuantity, orderQuantity, phone, address };
 
-        fetch('https://thawing-cove-14033.herokuapp.com/order', {
+        fetch('http://localhost:3000/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -65,7 +65,7 @@ const ProductPurchase = () => {
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Prodcut Name</span>
+                                        <span className="label-text">Product Name</span>
                                     </label>
                                     <input type="text" name='productName' value={product.name} placeholder="product name" className="input input-bordered" disabled />
                                 </div>
