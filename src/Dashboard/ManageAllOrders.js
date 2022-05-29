@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order`, {
+            fetch(`https://rocky-fortress-41049.herokuapp.com/order`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
