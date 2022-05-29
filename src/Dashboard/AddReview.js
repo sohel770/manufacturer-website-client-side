@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 const AddReview = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const imageStorageKey = '3ca0901828bf167160b533e2cfa55655';
+    const imageStorageKey = 'bf3c59a14356d8d1507caaf2aac34364';
 
     const onSubmit = async data => {
         const image = data.image[0];
@@ -26,7 +26,7 @@ const AddReview = () => {
                         img: img
                     }
                     // send to your database
-                    fetch('https://thawing-cove-14033.herokuapp.com/review', {
+                    fetch('http://localhost:5000/review', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -9,7 +9,7 @@ const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth);
     console.log(user.email);
-    const imageStorageKey = '3ca0901828bf167160b533e2cfa55655';
+    const imageStorageKey = '7ccb51f0ef0da61e2d614aa3dd425cbb';
 
     const onSubmit = async data => {
         const image = data.image[0];
@@ -34,7 +34,7 @@ const AddProduct = () => {
                         img: img
                     }
                     // send to your database
-                    fetch('https://thawing-cove-14033.herokuapp.com/product', {
+                    fetch('http://localhost:5000/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

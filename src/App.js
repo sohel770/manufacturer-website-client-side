@@ -1,5 +1,6 @@
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import RequireAuth from './Authentication/RequireAuth';
+import RequireAdmin from './Authentication/RequireAdmin'
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
@@ -14,6 +15,8 @@ import Navbar from './Shared/Navbar';
 import AddProduct from './Dashboard/AddProduct';
 import AddReview from './Dashboard/AddReview';
 import Dashboard from './Dashboard/Dashboard';
+import Users from './Dashboard/Users';
+import MyProfile from './Dashboard/MyProfile';
 
 
 
@@ -33,22 +36,34 @@ function App() {
           }></Route>
 
 
-          
+{/* start nestedRoute */}
+    <Route path='/dashboard' element={<RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>}>
 
 
-
-          <Route path='/addProduct' element={
+      {/* <Route index element={<Users></Users>}></Route> */}
+      <Route path='addProduct' element={
             <RequireAuth>
               <AddProduct></AddProduct>
             </RequireAuth>}></Route>
+
+          </Route>
+ {/* End nestedRoute */}
+
+
+
+         
 
           <Route path='/addReview' element={<RequireAuth>
             <AddReview></AddReview>
           </RequireAuth>}></Route>
 
-          <Route path='/dashboard' element={<RequireAuth>
-            <Dashboard></Dashboard>
+          <Route path='/myProfile' element={<RequireAuth>
+            <MyProfile></MyProfile>
           </RequireAuth>}></Route>
+
+         
 
 
 
