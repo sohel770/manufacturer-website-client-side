@@ -1,62 +1,79 @@
 import React from 'react';
-import codeimg from '../Assests/code-img.png'
+import './Blogs.css';
 
 const Blogs = () => {
     return (
-        <div className='container mx-auto mb-5'>
-            <div className=''>
-                <h4 className='mt-4 text-2xl font-bold text-center text-primary'>Blogs
-                </h4>
-                <article>
-                    <h4 className='mt-4 text-xl text-primary'>How will you improve the performance of a React Application?
-                    </h4>
-                    <p>(a) Usage of Pure components
-                        React. (b) memo for component memorization.
-                        (c) The shouldComponentUpdate Life Cycle Event.
-                        (d) Binding vs. Arrow Functions in Constructors.
-                        (e) Refrain from using Inline style attribute
-                        (f) Avoid extra tags by using React fragments</p>
-                </article>
+        <div className='all-blogs-container'>
+            <div className='section-header-container'>
+                <h1 className='section-header'>Blogs</h1>
             </div>
-            <div className=''>
-                <article>
-                    <h4 className='mt-4 text-xl text-primary'>What are the different ways to manage a state in a React application?
-                    </h4>
-                    <li><strong>Local (UI) state:</strong> Local state is data we manage in one or another component.</li>
-                    <li><strong>Global (UI) state:</strong> Global state is data we manage across multiple components.</li>
-                    <li><strong>Server state :</strong> Data that comes from an external server that must be integrated with our UI state. </li>
-                    <li><strong>URL state:</strong>Data that exists on our URLs, including the pathname and query parameters.</li>
-                </article>
-            </div>
-            <div className=''>
-                <article>
-                    <h4 className='mt-4 text-xl text-primary'>How does prototypical inheritance work?
-                    </h4>
-                    <p>prototypical inheritance refers to the ability to access object properties from another object. We use a JavaScript prototype to add new properties and methods to an existing object constructor. We can then essentially tell our JS code to inherit properties from a prototype. Prototypical inheritance allows us to reuse the properties or methods from one JavaScript object to another through a reference pointer function.</p>
-                </article>
-            </div>
-            <div className=''>
-                <article>
-                    <h4 className='mt-4 text-xl text-primary'>Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts
-                    </h4>
-                    <p>If you update it directly, calling the setState() afterward may just replace the update you made.
-                        When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.
-                        You will lose control of the state across all components.</p>
-                </article>
-            </div>
-            <div className=''>
-                <article>
-                    <h4 className='mt-4 text-xl text-primary'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?
-                    </h4>
-                    <img src={codeimg} alt="" />
-                </article>
-            </div>
-            <div className=''>
-                <article>
-                    <h4 className='mt-4 text-xl text-primary'>What is a unit test? Why should write unit tests?
-                    </h4>
-                    <p>A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system. In most programming languages, that is a function, a subroutine, a method or property. The isolated part of the definition is important.  test.One of the benefits of unit tests is that they isolate a function, class or method and only test that piece of code. Higher quality individual components create overall system resiliency. Thus, the result is reliable code. Unit tests also change the nature of the debugging process</p>
-                </article>
+            <div className='blogs-container'>
+                <div className='blog'>
+                    <div>
+                        <h5 className='title'>How will you improve the performance of a React Application?</h5>
+                    </div>
+                    <div>
+                        <p>you can sort out about more than half of performance issues by analyzing how your components interacted in your app by using amazing tools such as React dev tools. Prioritize the resources which are needed to be loaded first and lazyload the rest of code or resources with techniques such as code-splitting. There might be higher chances when you are duplicating things more unnecessarily or unintentionally. Make sure to get them analyzed and sort out the size of your bundled code. Server side rendering is not as fancy as it sounds. If not implemented properly, it can make performance of your app more worse or even disaster.</p>
+                    </div>
+                </div>
+                <div className='blog'>
+                    <div>
+                        <h5 className='title'>What are the different ways to manage a state in a React application?</h5>
+                    </div>
+                    <div>
+                        <p><span className='title'>Communication State</span>
+                            Communication state is the “loading phase” of the transactions between different states. It stores the following information when used in a React app. With the Communication state, you can now access the state of the request without setting any particular command.
+                        </p>
+                        <p><span className='title'>Data State</span>The Data state will receive all the information from the outer world. But how will it identify which information is what and whether it needs to be stored in the data state or not? Every piece of information will have an identifier that will help the Data state recognize and request for particular information that it can store.</p>
+                        <p><span className='title'>Control State</span>Contrary to the state mentioned above in a React app, the control state does not represent the application’s environment. Instead, it refers to the state which the user has input into the app. For example, form inputs, selected items, etc. Control state is known to be more diverse and versatile when it comes to storing information.</p>
+                        <p><span className='title'>Seassion State</span>Session state contains information about the user of the application such as user id, permissions, passwords, etc. It may also include information on how the application should work according to a particular user’s preferences.</p>
+                        <p><span className='title'>Location State</span>Location state is the UTF-8 display that appears in your URL bar. In fact, the L in URL stands for Locator! One of the most interesting facts about Location state is that you can give directions to a user to parts of the application that do not have unique URLs associated with them.</p>
+                    </div>
+                </div>
+                <div className='blog'>
+                    <div>
+                        <h5 className='title'>How does prototypical inheritance work?</h5>
+                    </div>
+                    <div>
+                        <p>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object.
+                            <div className='text-center my-2'>
+                                <img className='img-fluid' src="https://media.geeksforgeeks.org/wp-content/uploads/20200520193336/Untitled-Diagram108.png" alt="" />
+                            </div>
+                            Traditionally, in order to get and set the Prototype of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.</p>
+                    </div>
+                </div>
+                <div className='blog'>
+                    <div>
+                        <h5 className='title'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h5>
+                    </div>
+                    <div>
+                        <p>In order to discover a product by its name in an array, we will use array.find(). To get a truthy value, the callbackFn function is called once for each index in the array. If so, find returns the element's value instantly. Unless this is the case, find returns an error. For every index in the array, callbackFn is called, not only those that have been given values. If you use the callbackFn function offered by find, you may change the array that it is called on. Before the initial callbackFn activation, the items found by find are pre-set. Using Javascript's arr.find() function, you may obtain the value of the first member in an array that meets your criteria. If any of the array's items meet the criterion, the first one to meet it will print.</p>
+                    </div>
+                </div>
+                <div className='blog'>
+                    <div>
+                        <h5 className='title'>What is a unit test and Why should write unit tests?</h5>
+                    </div>
+                    <div>
+                        <p>Unit testing involves the testing of each unit or an individual component of the software application. It is the first level of functional testing. The aim behind unit testing is to validate unit components with its performance. A unit is a single testable part of a software system and tested during the development phase of the application software.</p>
+                        <p className='title'>Reasons to do write tests: </p>
+                        <ul>
+                            <li>
+                                Unit testing helps tester and developers to understand the base of code that makes them able to change defect causing code quickly.
+                            </li>
+                            <li>
+                                Unit testing helps in the documentation.
+                            </li>
+                            <li>
+                                Unit testing fixes defects very early in the development phase that's why there is a possibility to occur a smaller number of defects in upcoming testing levels.
+                            </li>
+                            <li>
+                                It helps with code reusability by migrating code and test cases.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     );

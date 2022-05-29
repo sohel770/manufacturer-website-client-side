@@ -27,9 +27,10 @@ const Portfolio = () => {
             </div>
             <div className='mt-5 mb-36'>
                 <h2 className='text-xl uppercase'><strong>Projects:</strong></h2>
-                <a className='text-blue-500 hover:underline' href="https://backpack-warehouse.web.app/">Inventory-Website</a> ||
-                <a className='text-blue-500 hover:underline' href="https://digital-marketer-b7be2.web.app/">Service-Website</a> ||
-                <a className='text-blue-500 hover:underline' href="https://multi-cooker-review.netlify.app/">Review-Website</a>
+                <a className='text-blue-500 hover:underline' href="https://warehouse-management-fdb62.firebaseapp.com/">Home Improvement
+</a> ||
+                <a className='text-blue-500 hover:underline' href="https://astonishing-pika-1e6f5f.netlify.app/">Service-Website</a> ||
+               
             </div>
         </section>
     );

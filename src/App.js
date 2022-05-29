@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
 import RequireAuth from './Authentication/RequireAuth';
-import RequireAdmin from './Authentication/RequireAdmin'
+// import RequireAdmin from './Authentication/RequireAdmin'
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
@@ -20,7 +20,7 @@ import MyProfile from './Dashboard/MyProfile';
 import MyOrders from './Dashboard/MyOrders';
 import ManageProducts from './Dashboard/ManageProducts';
 import ManageAllOrders from './Dashboard/ManageAllOrders';
-import About from './Dashboard/About';
+// import About from './Dashboard/About';
 import DeleteConfirmModal from './Dashboard/DeleteConfirmModal';
 
 
@@ -73,9 +73,6 @@ function App() {
               <ManageAllOrders></ManageAllOrders>
             </RequireAuth>}></Route>
 
-
-
-            <Route path='sohel' element={<About></About>}></Route>
           </Route>
           {/* End nestedRoute */}
 
