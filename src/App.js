@@ -33,6 +33,10 @@ function App() {
           }></Route>
 
 
+          
+
+
+
           <Route path='/addProduct' element={
             <RequireAuth>
               <AddProduct></AddProduct>
