@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 const AddReview = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const imageStorageKey = 'bf3c59a14356d8d1507caaf2aac34364';
+    const imageStorageKey = '7ccb51f0ef0da61e2d614aa3dd425cbb';
 
     const onSubmit = async data => {
         const image = data.image[0];

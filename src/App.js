@@ -17,6 +17,10 @@ import AddReview from './Dashboard/AddReview';
 import Dashboard from './Dashboard/Dashboard';
 import Users from './Dashboard/Users';
 import MyProfile from './Dashboard/MyProfile';
+import MyOrders from './Dashboard/MyOrders';
+import ManageProducts from './Dashboard/ManageProducts';
+import ManageAllOrders from './Dashboard/ManageAllOrders';
+import About from './Dashboard/About';
 
 
 
@@ -36,34 +40,54 @@ function App() {
           }></Route>
 
 
-{/* start nestedRoute */}
-    <Route path='/dashboard' element={<RequireAuth>
+          {/* start nestedRoute */}
+          <Route path='/dashboard' element={<RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>}>
 
+            <Route path='addProduct' element={
+              <RequireAuth>
+                <AddProduct></AddProduct>
+              </RequireAuth>}></Route>
 
-      {/* <Route index element={<Users></Users>}></Route> */}
-      <Route path='addProduct' element={
-            <RequireAuth>
-              <AddProduct></AddProduct>
+
+            <Route path='addReview' element={<RequireAuth>
+              <AddReview></AddReview>
             </RequireAuth>}></Route>
 
+
+            <Route path='users' element={<RequireAuth>
+              <Users></Users>
+          </RequireAuth>}></Route>
+
+          <Route path='myOrders' element={<RequireAuth>
+           <MyOrders></MyOrders>
+          </RequireAuth>}></Route>
+
+          <Route path='sohel' element={<About></About> }></Route>
           </Route>
- {/* End nestedRoute */}
+          {/* End nestedRoute */}
+
+          
+
+      
 
 
 
          
-
-          <Route path='/addReview' element={<RequireAuth>
-            <AddReview></AddReview>
+          <Route path='manageOrders' element={<RequireAuth>
+            <ManageAllOrders></ManageAllOrders>
           </RequireAuth>}></Route>
 
-          <Route path='/myProfile' element={<RequireAuth>
+          <Route path='manageProducts' element={<RequireAuth>
+            <ManageProducts></ManageProducts>
+          </RequireAuth>}></Route>
+
+          <Route path='myProfile' element={<RequireAuth>
             <MyProfile></MyProfile>
           </RequireAuth>}></Route>
 
-         
+
 
 
 
