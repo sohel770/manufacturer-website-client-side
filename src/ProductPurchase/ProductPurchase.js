@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -26,7 +27,7 @@ console.log(productId)
 
         const order = { name, customer, productName, minQuantity, price, availableQuantity, orderQuantity, phone, address };
 
-        fetch('http://localhost:3000/order', {
+        fetch('https://rocky-fortress-41049.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
